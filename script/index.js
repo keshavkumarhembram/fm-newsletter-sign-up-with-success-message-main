@@ -31,5 +31,7 @@ emailInput.addEventListener("keypress", () => {
 
 console.log(submitedEmail);
 dismissButton.addEventListener("click", () => {
-  location.replace("../index.html");
+  location.replace(
+    "https://keshavkumarhembram.github.io/fm-newsletter-sign-up-with-success-message-main/"
+  );
 });
