@@ -1,0 +1,289 @@
+/* ------------------------------- GLOBAL ------------------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------------------- CSS VARIABLES --------------------------- */
+/*Primary*/
+:root {
+  --tomato: hsl(4, 100%, 67%);
+}
+
+/* Neutral*/
+:root {
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+  --light-red: hsl(0, 100%, 67%);
+}
+
+/* ------------------------------- FONT ----------------------------- */
+@font-face {
+  font-family: Roboto;
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../assets/fonts/Roboto-Bold.ttf);
+  font-weight: 700;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--dark-slate-grey);
+}
+
+main {
+  display: flex;
+  padding: 20px;
+  border-radius: 25px;
+  background-color: var(--white);
+}
+
+/* --------------------------------- SIGNUP-FORM STYLING ------------------ */
+.image-container-mobile {
+  display: none;
+}
+
+.text-container {
+  min-height: 100%;
+  width: 460px;
+  padding: 75px 40px 40px 40px;
+}
+
+.text-container h1 {
+  font-size: 55px;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.text-container ul {
+  list-style: url(../assets/images/icon-list.svg);
+  padding: 25px;
+}
+
+.text-container ul li {
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.text-container form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-container form label {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.text-container form input[type="email"] {
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid var(--grey);
+  padding: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  caret-color: var(--charcoal-grey);
+  color: var(--charcoal-grey);
+}
+
+.text-container form input[type="email"]:hover {
+  border-color: var(--charcoal-grey);
+  cursor: pointer;
+}
+
+.text-container button {
+  font-size: 16px;
+  padding: 20px;
+  width: 100%;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  background-color: var(--charcoal-grey);
+}
+
+@media (hover: hover) {
+  .text-container button:hover {
+    background: linear-gradient(45deg, rgb(245, 72, 72), var(--tomato), orange);
+    background-color: var(--tomato);
+    transform: translateY(-5px);
+    box-shadow: 0px 3px 3px 0px rgba(5, 5, 5, 0.5),
+      1px 1px 1px 1px rgba(5, 5, 5, 0.2);
+    cursor: pointer;
+  }
+}
+
+.text-container button:focus {
+  animation: push-animation 0.5s linear 0s 1 alternate;
+}
+
+.text-container button:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+/* -------------------------------- ERRORS ------------------------------ */
+
+#error-text {
+  color: var(--tomato);
+  position: absolute;
+  right: 0px;
+  font-weight: 700;
+}
+
+.error {
+  border-color: var(--tomato) !important;
+  background-color: hsla(4, 100%, 67%, 0.2) !important;
+  color: var(--tomato) !important;
+}
+
+.error-animation {
+  animation: shake 0.3s linear 0s infinite alternate;
+}
+
+/* ---------------------------- THANKYOU PAGE ----------------------------*/
+
+.thankyou {
+  display: none;
+}
+
+.success {
+  padding: 40px;
+}
+
+.success > img {
+  padding-bottom: 20px;
+}
+
+.confirmation-text {
+  padding-bottom: 25px;
+}
+
+.email {
+  font-weight: 700;
+}
+
+/* ------------------------ FOOTER - FRONTEND MENTOR ------------------- */
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  font-size: 11px;
+  text-align: center;
+  color: var(--white);
+}
+.attribution a {
+  color: var(--tomato);
+}
+
+/* -------------------------- ANIMATION ----------------------------- */
+@keyframes push-animation {
+  to {
+    transform: translateY(5px);
+    background-color: var(--tomato);
+  }
+}
+
+@keyframes shake {
+  10%,
+  25%,
+  75%,
+  90% {
+    transform: translateX(-1px);
+  }
+  15%,
+  85% {
+    transform: translateX(-4px);
+  }
+  35%,
+  65% {
+    transform: translateX(1px);
+  }
+  50% {
+    transform: translate3d(4px);
+  }
+}
+
+/* ---------------------- SCREEN SIZE ------------------------------- */
+
+@media screen and (max-height: 700px) {
+  .attribution {
+    position: relative;
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (max-width: 375px) and (hover: none) {
+  body {
+    background-color: var(--white);
+  }
+  main {
+    transform: scale(1);
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 0px;
+    width: 100vw;
+  }
+
+  .image-container-mobile {
+    display: block;
+  }
+
+  .text-container {
+    padding: 40px 25px 80px 25px;
+    width: 100%;
+  }
+
+  .text-container h1 {
+    font-size: 35px;
+  }
+
+  .image-container-desktop {
+    display: none;
+  }
+
+  .attribution {
+    color: var(--charcoal-grey);
+  }
+
+  form {
+    padding: 10px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  #error-text {
+    font-size: 13px;
+    right: 10px;
+  }
+
+  .text-container button {
+    box-shadow: 0px 3px 3px 0px rgba(5, 5, 5, 0.5),
+      1px 1px 1px 1px rgba(5, 5, 5, 0.2);
+  }
+
+}
