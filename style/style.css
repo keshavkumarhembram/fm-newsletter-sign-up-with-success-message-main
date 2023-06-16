@@ -6,13 +6,11 @@
 }
 
 /* ----------------------------- CSS VARIABLES --------------------------- */
-/*Primary*/
-:root {
-  --tomato: hsl(4, 100%, 67%);
-}
 
-/* Neutral*/
 :root {
+  /*Primary*/
+  --tomato: hsl(4, 100%, 67%);
+  /* Neutral*/
   --dark-slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
   --grey: hsl(231, 7%, 60%);
@@ -32,6 +30,19 @@
   src: url(../assets/fonts/Roboto-Bold.ttf);
   font-weight: 700;
 }
+/* Reference for me*/
+/* input:-internal-autofill-selected {
+  background: unset !important;
+} */
+
+/* input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+} */
+
+/* input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px yellow inset;
+} */
 
 body {
   min-height: 100vh;
@@ -90,7 +101,7 @@ main {
   margin-bottom: 5px;
 }
 
-.text-container form input[type="email"] {
+.text-container form input {
   font-size: 16px;
   border-radius: 5px;
   border: 2px solid var(--grey);
@@ -101,9 +112,13 @@ main {
   color: var(--charcoal-grey);
 }
 
-.text-container form input[type="email"]:hover {
+.text-container form input:hover {
   border-color: var(--charcoal-grey);
   cursor: pointer;
+}
+
+.text-container form input:active {
+  background-color: unset;
 }
 
 .text-container button {
@@ -150,6 +165,10 @@ main {
   border-color: var(--tomato) !important;
   background-color: hsla(4, 100%, 67%, 0.2) !important;
   color: var(--tomato) !important;
+}
+
+.error:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px hsla(4, 100%, 67%, 0.2) inset;
 }
 
 .error-animation {
@@ -285,5 +304,4 @@ main {
     box-shadow: 0px 3px 3px 0px rgba(5, 5, 5, 0.5),
       1px 1px 1px 1px rgba(5, 5, 5, 0.2);
   }
-
 }
